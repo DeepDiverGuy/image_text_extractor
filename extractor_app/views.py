@@ -100,7 +100,7 @@ def process_pdf(request):
             current_page_pil = Image.fromarray(img)
 
             # text = pytesseract.image_to_string(Image.open("page-%i.png" % page.number), lang='eng+Bengali')
-            text += pytesseract.image_to_string(current_page_pil, lang='eng+Bengali')
+            text += pytesseract.image_to_string(current_page_pil, lang='eng+Bengali')  # 'Bengali' worked well in my Ubuntu, but in another Windows, I had to use 'ben'
         except:
             error_messages["text extraction error"] = f"error occurred on page: {page.number+1}"
 
