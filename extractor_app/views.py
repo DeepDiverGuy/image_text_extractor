@@ -1,6 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
+import os
 import base64
 import fitz
 import numpy as np
@@ -56,6 +57,7 @@ def process_pdf(request):
     bottom_left_y = multiply_count*320  # 320
 
     pytess_lang = 'eng+Bengali'  # 'Bengali' worked well in my Ubuntu, but in another Windows, I had to use 'ben'
+    os.environ["TESSDATA_PREFIX"] = os.path.join(os.getcwd(), 'tessdata')
 
     # Get the uploaded file from the request
     pdf_file = request.FILES['pdf_file']
