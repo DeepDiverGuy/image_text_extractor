@@ -1,3 +1,7 @@
+# Description
+
+Extracts texts smartly (Bangla & English both) using the Tesseract engine with pre-trained "Bangla" & "English" models. It specializes on extracting texts from "Tables" found in the PDF or Images.
+
 # Requirements
 
 ## SUDO
